@@ -10,6 +10,9 @@
     "type": "git",
     "url": "git+https://github.com/towerself/ComponentsMediator.git"
   },
+  "peerDependencies": {
+    "vue": "^2.5.2"
+  },
   "keywords": [
     "vuemediator"
   ],
