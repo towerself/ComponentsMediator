@@ -1,0 +1,22 @@
+{
+  "name": "components-mediator",
+  "version": "0.1.0-alpha",
+  "description": "Intermediator for Interaction between VUE Components",
+  "main": "/src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/towerself/ComponentsMediator.git"
+  },
+  "keywords": [
+    "vuemediator"
+  ],
+  "author": "yuliang <towerself@126.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/towerself/ComponentsMediator/issues"
+  },
+  "homepage": "https://towerself.github.io/"
+}
