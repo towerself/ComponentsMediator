@@ -15,33 +15,31 @@ export default {
         }
       },
       methods: {
-        register(item) {
-          console.log("新注册系统");
+        ComponentsMediatorRegister(item) {
+          try {
+            console.log("register---start:",item.type);
+          } catch (error) {
+            
+          }
           if (this.ComponentsMediator._msgs[item.type]) {
             this.ComponentsMediator._msgs[item.type][item.uid + ""] = item.fn;
           } else {
             this.ComponentsMediator._msgs[item.type] = {}
             this.ComponentsMediator._msgs[item.type][item.uid + ""] = item.fn;
           }
-          console.log(this.ComponentsMediator._msgs);
         },
-        send(type, ...param) {
-          console.log(this.ComponentsMediator._msgs);
+        ComponentsMediatorSend(type, ...param) {
           if (this.ComponentsMediator._msgs && this.ComponentsMediator._msgs[type]) {
-
             Object.keys(this.ComponentsMediator._msgs[type]).forEach(i => {
-              console.log("send ^^^^^^^^^^^");
-
+              console.log("send---start---",type);
               this.ComponentsMediator._msgs[type][i] && this.ComponentsMediator._msgs[type][i](...param)
             });
           }
 
 
         },
-        rm(uid) {
-          console.log("rm///////////////////////");
+        ComponentsMediatorRM(uid) {
           Object.keys(this.ComponentsMediator._msgs).forEach(i => {
-
             delete this.ComponentsMediator._msgs[i][uid]
           });
 
@@ -51,9 +49,9 @@ export default {
          */
         createComponentsMediator() {
           //创建命名空间
-          this.CM$on('register', this.register)
-          this.CM$on('send', this.send)
-          this.CM$on('rm', this.rm)
+          this.CM$on('register', this.ComponentsMediatorSend)
+          this.CM$on('send', this.ComponentsMediatorSend)
+          this.CM$on('rm', this.ComponentsMediatorRM)
         },
         /**
          * 触发已经注册在本级，及其以上的已经注册到组件中介对像(ComponentsMediator)的事件关按相应要求传入参数
@@ -65,14 +63,11 @@ export default {
          */
         emits(context, type, ...item) {
           // console.log(context.ComponentsMediator._events);
-
           if (!context.$parent) {
             return;
           }
           if (context.ComponentsMediator._events && Object.hasOwnProperty.call(context.ComponentsMediator._events, type)) {
             var that = context.ComponentsMediator._events;
-            console.log(context.ComponentsMediator._events);
-
             that[type][0](...item);
           } else {
             this.emits(context.$parent, type, ...item);
@@ -97,8 +92,6 @@ export default {
         // 逻辑...
       },
       destroyed() {
-        // console.log("des",this._uid);
-
         this.emits(this, 'rm', this._uid);
       }
     })
