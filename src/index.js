@@ -49,7 +49,7 @@ export default {
          */
         createComponentsMediator() {
           //创建命名空间
-          this.CM$on('register', this.ComponentsMediatorSend)
+          this.CM$on('register', this.ComponentsMediatorRegister)
           this.CM$on('send', this.ComponentsMediatorSend)
           this.CM$on('rm', this.ComponentsMediatorRM)
         },
