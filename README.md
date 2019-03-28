@@ -1,4 +1,5 @@
 # ComponentsMediator
+[![npm version](https://badge.fury.io/js/components-mediator.svg)](https://badge.fury.io/js/components-mediator)
 VUE组间(事件中心)
 ## 加入依赖
 ```npm i components-mediator```
