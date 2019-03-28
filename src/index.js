@@ -17,7 +17,7 @@ export default {
       methods: {
         ComponentsMediatorRegister(item) {
           try {
-            console.log("register---start:",item.type);
+            // console.log("register---start:",item.type);
           } catch (error) {
             
           }
@@ -31,7 +31,7 @@ export default {
         ComponentsMediatorSend(type, ...param) {
           if (this.ComponentsMediator._msgs && this.ComponentsMediator._msgs[type]) {
             Object.keys(this.ComponentsMediator._msgs[type]).forEach(i => {
-              console.log("send---start---",type);
+              // console.log("send---start---",type);
               this.ComponentsMediator._msgs[type][i] && this.ComponentsMediator._msgs[type][i](...param)
             });
           }
