@@ -1,6 +1,9 @@
 # ComponentsMediator
 [![npm version](https://badge.fury.io/js/components-mediator.svg)](https://badge.fury.io/js/components-mediator)
 VUE组间(事件中心)
+#Log 2022年11月4日
+现已经支持vue3.0,vue2.X依然可用
+
 ## 加入依赖
 ```npm i components-mediator```
 或是

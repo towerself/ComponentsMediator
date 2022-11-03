@@ -1,4 +1,3 @@
-import Vue from "vue"
 export default {
   install: function (Vue, options) {
     Vue.mixin({
@@ -95,11 +94,6 @@ export default {
         this.emits(this, 'rm', this._uid);
       }
     })
-
-    // 4. 添加实例方法
-    Vue.prototype.$myMethod = function (methodOptions) {
-      // 逻辑...
-    }
   }
 
 }
