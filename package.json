@@ -1,6 +1,6 @@
 {
   "name": "components-mediator",
-  "version": "3.0.1-alpha",
+  "version": "3.0.1.1-alpha",
   "description": "Intermediator for Interaction between VUE Components",
   "main": "/src/index.js",
   "scripts": {
