@@ -92,6 +92,9 @@ export default {
       },
       destroyed() {
         this.emits(this, 'rm', this._uid);
+      },
+      unmounted() {
+        this.emits(this, 'rm', this._uid);
       }
     })
   }
